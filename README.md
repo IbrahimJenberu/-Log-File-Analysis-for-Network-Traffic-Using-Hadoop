@@ -1,31 +1,58 @@
-# Log File Analysis for Network Traffic Using Hadoop
+# 🚀 Log File Analysis for Network Traffic Using Hadoop
 
-This project aims to analyze server log files to detect unusual traffic patterns or potential security threats using **Hadoop**'s distributed computing capabilities. By processing large volumes of log data, the system identifies network anomalies or malicious activities.
+This project is a scalable system designed to analyze server log files, detect unusual traffic patterns, and identify potential security threats. By leveraging **Hadoop's distributed computing power** and **Spark's real-time processing capabilities**, the system delivers actionable insights from large volumes of network data.
 
-## Tools & Technologies:
-- **HDFS**: Scalable storage of log files.
-- **Apache Spark**: Fast data processing and machine learning (MLlib for anomaly detection).
-- **Apache Hive**: SQL-like queries for log analysis.
-- **Apache MapReduce**: For processing and analyzing large datasets.
+---
 
-## Workflow:
-1. **Data Collection**: Log data from datasets like UNSW-NB15 or NASA logs.
-2. **Preprocessing**: Use Apache Spark for cleaning and formatting logs.
-3. **Anomaly Detection**: Spark MLlib or MapReduce to detect unusual traffic patterns.
-4. **Output**: Generate reports or traffic statistics on anomalies.
+## 🌟 Key Features
 
-## Setup & Running:
-1. **Preprocessing**: Run the Spark preprocessing job.
-2. **Anomaly Detection**: Run the Spark MLlib anomaly detection.
-3. **MapReduce**: Run the Hadoop MapReduce job for traffic analysis.
-4. **Hive**: Query processed data in Hive.
+- **Data Collection**: Collect server logs from simulated or public datasets like UNSW-NB15 or NASA Logs.
+- **Preprocessing with Spark**: Clean and structure raw log data into a queryable format.
+- **Anomaly Detection**: Use **Spark MLlib** or **MapReduce** to identify unusual patterns or suspicious activities.
+- **Scalable Storage**: Store and retrieve massive datasets using **HDFS**.
+- **SQL-like Querying**: Use **Apache Hive** for traffic insights and generating reports.
+- **Real-Time Processing**: Analyze logs efficiently for near real-time results.
 
-## Output:
-The output includes anomaly reports and traffic statistics for detected unusual behavior or security threats.
+---
 
-## Requirements:
-- Apache Hadoop
-- Apache Spark
-- Apache Hive
-- Scala
-- Java
+## 🏗️ Architecture Overview
+
+1. **Input**: Raw log data from simulated sources (e.g., `input/sample_logs.txt`).
+2. **Preprocessing**: Clean and transform logs using **Apache Spark** (e.g., filter invalid entries, normalize data).
+3. **Anomaly Detection**: Identify unusual traffic using:
+   - **MLlib** clustering algorithms (K-Means).
+   - **MapReduce** for distributed pattern recognition.
+4. **Output**:
+   - **Processed Logs**: Stored in `output/processed_logs/` (HDFS or local storage).
+   - **Anomaly Reports**: Generated in `output/anomaly_predictions/`.
+   - **Traffic Statistics**: Hive query results in `output/traffic_statistics/`.
+
+---
+
+## ⚙️ Tools and Technologies
+
+| **Tool**          | **Purpose**                                  |
+|--------------------|----------------------------------------------|
+| **HDFS**          | Distributed storage for log files.           |
+| **Apache Spark**  | Real-time processing and machine learning.   |
+| **Apache Hive**   | SQL-like querying and insights generation.   |
+| **MapReduce**     | Distributed log processing and traffic stats.|
+| **Datasets**      | UNSW-NB15, NASA Logs (or custom logs).       |
+
+---
+
+## 🛠️ Setup and Usage
+
+### Prerequisites
+1. **Hadoop** (v3.2 or above)
+2. **Apache Spark** (v3.2 or above)
+3. **Apache Hive**
+4. **Java** (v8 or above)
+5. **Scala** (for Spark programs)
+
+### Steps to Run
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/logfile-analysis-hadoop.git
+   cd logfile-analysis-hadoop
